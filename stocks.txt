@@ -1,14 +1,14 @@
 1
-ITEMNAME:Bracelet
-PRICE:BND 15
+ITEMNAME:Matching Bracelet
+PRICE:BND 10
 IMG SOURCE:https://img.kwcdn.com/product/fancy/3ffbe248-9576-446a-a0e5-7df85e8d6538.jpg
-STOCK:3
+STOCK:0
 
 2
 ITEMNAME:Men's Watch
 PRICE:BND 15
 IMG SOURCE:https://img.kwcdn.com/product/open/27b172923d5142c9a71982f9c311dc56-goods.jpeg?imageView2/2/w/1300/q/90/format/avif
-STOCK:2
+STOCK:0
 
 3
 ITEMNAME:Bulu Pucung si Aznil

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmGifts.bn | Premium Gifts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff4757;
+            --accent-glow: rgba(255, 71, 87, 0.4);
+            --bg: #0b1120;
+            --card-bg: #161f33;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --whatsapp: #2ecc71;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scrollText {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+            70% { box-shadow: 0 0 15px 10px rgba(255, 71, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+        }
+
+        .announcement-bar {
+            background: linear-gradient(90deg, #ff4757, #ff6b81);
+            color: white; font-size: 0.75rem; font-weight: 600; padding: 8px 0;
+            overflow: hidden; white-space: nowrap; display: flex;
+        }
+        .announcement-content { display: inline-block; animation: scrollText 15s linear infinite; }
+
+        nav {
+            background: rgba(11, 17, 32, 0.85); backdrop-filter: blur(12px);
+            padding: 15px 20px; display: flex; justify-content: space-between;
+            align-items: center; position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .brand { font-weight: 800; font-size: 1.2rem; }
+        .brand span { color: var(--accent); }
+
+        .hero {
+            padding: 60px 20px; text-align: center;
+            background: radial-gradient(circle at top, #161f33 0%, #0b1120 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            animation: fadeUp 0.8s ease-out;
+        }
+        .hero h1 { 
+            font-size: 2.5rem; font-weight: 800; margin: 0 0 15px 0;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        /* --- THE RESTORED BIO --- */
+        .hero-bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 450px;
+            margin: 0 auto 30px auto;
+        }
+        .hero-bio span { display: block; margin-bottom: 6px; }
+        .hero-bio .highlight { color: #fff; font-weight: 500; margin-top: 12px; }
+        
+        .shop-now-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .shop-now-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        .section-header {
+            padding: 40px 20px 10px; font-size: 1rem; font-weight: 800;
+            color: #fff; display: flex; align-items: center; gap: 8px;
+        }
+        .section-header::before { content: ''; display: block; width: 4px; height: 16px; background: var(--accent); border-radius: 2px; }
+
+        .product-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 15px; padding: 15px 20px; max-width: 800px; margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--card-bg); border-radius: 16px; padding: 12px;
+            border: 1px solid rgba(255,255,255,0.05); display: flex;
+            flex-direction: column; justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeUp 0.6s ease-out backwards;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 71, 87, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .img-container { position: relative; background: #0b1120; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: transform 0.6s ease; }
+        .product-card:hover img { transform: scale(1.1); }
+
+        .product-name { font-weight: 600; font-size: 0.9rem; margin: 0; color: #fff; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+        .price { font-weight: 800; font-size: 1.1rem; color: var(--accent); }
+        
+        .stock-count {
+            font-size: 0.65rem; font-weight: 600; padding: 4px 8px; border-radius: 6px;
+            background: rgba(46, 204, 113, 0.15); color: var(--whatsapp);
+        }
+
+        .order-btn {
+            background: rgba(46, 204, 113, 0.1); color: var(--whatsapp);
+            border: 1px solid rgba(46, 204, 113, 0.3); padding: 12px;
+            width: 100%; border-radius: 12px; font-size: 0.85rem; font-weight: 700;
+            cursor: pointer; transition: 0.3s;
+        }
+        .order-btn:hover { background: var(--whatsapp); color: white; }
+
+        footer { text-align: center; padding: 60px 20px 40px; font-size: 0.75rem; color: #475569; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            ✨ FREE DELIVERY IN BRUNEI-MUARA ✨ PREMIUM PACKAGING INCLUDED ✨ NEW DROPS EVERY WEEK ✨
+        </div>
+    </div>
+
+    <nav>
+        <div class="brand">omgifts<span>.bn</span></div>
+        <div style="font-size: 1.1rem;">🎁</div>
+    </nav>
+
+    <div class="hero">
+        <h1>A gift that make you smile.</h1>
+        <div class="hero-bio">
+            <span>📍 Based in Brunei</span>
+            <span>✨ Handpicked. Premium. Limited.</span>
+            <span class="highlight">The best place to get a gift for a loved one.</span>
+        </div>
+        <a href="#shop" class="shop-now-btn">Explore Drops 👇</a>
+    </div>
+
+    <div class="section-header" id="shop">Trending Now</div>
+
+    <div class="product-grid" id="main-shop"></div>
+
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <a href="https://instagram.com/omgifts.bn" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">Instagram</a>
+            <a href="https://tiktok.com/@omgifts.bn" style="color:var(--text-muted); text-decoration:none; margin:0 10px;">TikTok</a>
+        </div>
+        &copy; 2026 OmGifts.bn • +673 8820496 • Brunei
+    </footer>
+
+    <script>
+        async function buildStore() {
+            const grid = document.getElementById('main-shop');
+            try {
+                const response = await fetch('stocks.txt');
+                const text = await response.text();
+                const blocks = text.split(/\n\s*\n/);
+                
+                blocks.forEach((block, index) => {
+                    const lines = block.split('\n');
+                    let item = {};
+                    
+                    lines.forEach(line => {
+                        if(line.includes('ITEMNAME:')) item.name = line.split('ITEMNAME:')[1].trim();
+                        if(line.includes('PRICE:')) item.price = line.split('PRICE:')[1].trim();
+                        if(line.includes('IMG SOURCE:')) item.img = line.split('IMG SOURCE:')[1].trim();
+                        if(line.includes('STOCK:')) item.stock = line.split('STOCK:')[1].trim();
+                    });
+
+                    if(item.name) {
+                        const stockInt = parseInt(item.stock);
+                        const stockLabel = stockInt > 0 ? `${stockInt} Left` : "Out of Stock";
+                        const isOut = stockInt <= 0;
+
+                        const card = `
+                            <div class="product-card" style="animation-delay: ${index * 0.1}s">
+                                <div class="img-container">
+                                    <img src="${item.img}" alt="${item.name}">
+                                </div>
+                                <div>
+                                    <p class="product-name">${item.name}</p>
+                                    <div class="price-row">
+                                        <span class="price">${item.price}</span>
+                                        <span class="stock-count" style="${isOut ? 'color:#ff4757; background:rgba(255,71,87,0.1)' : ''}">
+                                            ${stockLabel}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="order-btn" onclick="orderWhatsApp('${item.name.replace(/'/g, "\\'")}', '${item.price}')" ${isOut ? 'disabled' : ''}>
+                                    ${isOut ? 'Sold Out' : '💬 Order'}
+                                </button>
+                            </div>
+                        `;
+                        grid.innerHTML += card;
+                    }
+                });
+            } catch (err) {
+                grid.innerHTML = "<p>Failed to load items.</p>";
+            }
+        }
+
+        function orderWhatsApp(name, price) {
+            const phone = "6738820496";
+            const message = `Hi OmGifts! 🎁%0A%0AOrder Request:%0A✨ *${name}*%0A💰 Price: ${price}%0A%0AIs this available?`;
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+
+        window.onload = buildStore;
+    </script>
+</body>
+</html>

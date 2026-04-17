@@ -1,0 +1,11 @@
+1
+ITEMNAME:Bracelet
+PRICE:BND 15
+IMG SOURCE:https://img.kwcdn.com/product/fancy/3ffbe248-9576-446a-a0e5-7df85e8d6538.jpg
+STOCK:3
+
+2
+ITEMNAME:Men's Watch
+PRICE:BND 15
+IMG SOURCE:https://img.kwcdn.com/product/fancy/42e7645b-d50c-4c7c-94e7-e3d2d71c879f.jpg
+STOCK:2

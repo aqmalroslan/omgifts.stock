@@ -7,7 +7,7 @@ STOCK:3
 2
 ITEMNAME:Men's Watch
 PRICE:BND 15
-IMG SOURCE:https://img.kwcdn.com/product/fancy/42e7645b-d50c-4c7c-94e7-e3d2d71c879f.jpg
+IMG SOURCE:https://img.kwcdn.com/product/open/27b172923d5142c9a71982f9c311dc56-goods.jpeg?imageView2/2/w/1300/q/90/format/avif
 STOCK:2
 
 3

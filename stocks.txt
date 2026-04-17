@@ -11,7 +11,7 @@ IMG SOURCE:https://img.kwcdn.com/product/fancy/42e7645b-d50c-4c7c-94e7-e3d2d71c8
 STOCK:2
 
 3
-ITEMNAME:Bulu si Aznil
+ITEMNAME:Bulu Pucung si Aznil
 PRICE:BND 2321.10
 IMG SOURCE:https://elements-resized.envatousercontent.com/elements-video-cover-images/files/0910ea1c-ea17-4f1a-ab03-758bbb2922d7/inline_image_preview.jpg?w=1600&cf_fit=cover&q=85&format=auto&s=507f06fc3b67f3eaae6b293e2f955de176c45409492054c1f96d296c0b4c3a74
 STOCK:1
